@@ -3,7 +3,7 @@ from flask import render_template
 from  . controller import ControllerBase
 
 
-class CICDController(ControllerBase):
+class CicdController(ControllerBase):
     @staticmethod
     def get():
         name = "Fan"
