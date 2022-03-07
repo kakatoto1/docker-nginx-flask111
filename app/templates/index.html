@@ -45,19 +45,20 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="/index">Home</a>
+                      <a class="nav-link active" aria-current="page" href="/">Home</a>
+
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="/github">Github</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="/about">Docker</a>
+                        <a class="nav-link" href="/docker">Docker</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">PythonFlask</a>
+                        <a class="nav-link" href="/pythonflask">PythonFlask</a>
                     </li>
                      <li class="nav-item">
-                        <a class="nav-link" href="#">CICD</a>
+                        <a class="nav-link" href="/cicd">CICD</a>
                     </li>
                 </ul>
             </div>
@@ -72,12 +73,15 @@
                         </a>
                 </div>
                 <div class="carousel-item">
+                    <a href="/docker">
                     <img src="{{ url_for('static', filename='images/docker.jpeg') }}" class="d-block w-100" alt="...">
                 </div>
                 <div class="carousel-item">
+                    <a href="/pythonflask">
                     <img src="{{ url_for('static', filename='images/pythonflask.jpeg') }}" class="d-block w-100" alt="...">
                 </div>
                 <div class="carousel-item">
+                    <a href="/cicd">
                     <img src="{{ url_for('static', filename='images/CICD.jpeg') }}" class="d-block w-100" alt="...">
                 </div>
             </div>
