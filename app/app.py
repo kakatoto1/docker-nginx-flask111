@@ -3,6 +3,7 @@ from flask import Flask, render_template
 from controllers.index_controller import IndexController
 from werkzeug.debug import DebuggedApplication
 from controllers.about_controller import AboutController
+from controllers.github_controller import GithubController
 
 app = Flask(__name__)
 app.secret_key = b'_5#y2L"F4Q8z\n\xec]/'
@@ -16,3 +17,7 @@ def index_get():
 @app.route("/about", methods=['GET'])
 def about_get():
     return AboutController.get()
+
+@app.route("/github", methods=['GET'])
+def github_get():
+    return GithubController.get()
