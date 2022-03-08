@@ -19,62 +19,101 @@
     <div class="row">
         <header class="mb-5">
             <!-- As a link -->
-                <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="#">Navbar</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav">
-                    <li class="nav-item">
-                      <a class="nav-link active" aria-current="page" href="/">Home</a>
+            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                <div class="container-fluid">
+                    <a class="navbar-brand" href="#">Navbar</a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarNav">
+                        <ul class="navbar-nav">
+                            <li class="nav-item">
+                                <a class="nav-link active" aria-current="page" href="/">Home</a>
 
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/github">Github</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/docker">Docker</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/pythonflask">PythonFlask</a>
-                    </li>
-                     <li class="nav-item">
-                        <a class="nav-link" href="/cicd">CICD</a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </nav>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="/github">Github</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="/docker">Docker</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="/pythonflask">PythonFlask</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="/cicd">CICD</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="clearfix">
+                    <img src="https://www.synopsys.com/content/dam/synopsys/sig-assets/images/cicd.svg.imgo.svg"
+                          height="60" class="col-md-20 float-md-end mb-3 ms-md-3" alt="...">
+                </div>
             </nav>
         </header>
     </div>
     <div class="row">
-        <div class="col-12">
+        <div class="col-10">
             <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras eleifend leo eu porttitor commodo. Integer
-                dictum suscipit imperdiet. Ut eleifend aliquet ultricies. Duis enim neque, laoreet interdum sapien
-                suscipit,
-                vestibulum euismod massa. In in iaculis sem. Integer mattis fermentum dolor ac scelerisque. In diam
-                ligula,
-                feugiat et porta sit amet, congue eu lectus. Duis faucibus ultrices neque quis pharetra. Fusce convallis
-                ligula nec elementum dictum. Etiam velit justo, consequat eu felis a, porttitor volutpat urna. Curabitur
-                ac
-                sodales odio.
+                CI/CD is a process that connects development to deployment through an automated integration
             </p>
             <p>
-                In et nunc ullamcorper, viverra turpis luctus, dictum diam. Maecenas ornare sem aliquam magna dictum
-                tempus.
-                Pellentesque congue id tellus nec ultrices. Sed luctus arcu eget nulla auctor, et eleifend tellus
-                placerat.
-                Aliquam lectus dui, feugiat sit amet tempor vitae, fringilla sed metus. Morbi laoreet egestas dolor,
-                tempus
-                hendrerit leo ullamcorper vitae. Aliquam hendrerit turpis elit, ut posuere ligula pulvinar varius. In
-                hac
-                habitasse platea dictumst. Morbi porta varius ligula. Aliquam vel odio ut ante sagittis aliquet a id
-                urna.
+
+                process. The idea is to allow developers to push code changes as the only step needed to deploy those
+                changes.
+            </p>
+            <p>
+
+                The CI pipeline enables teamwork to progress smoothly by automating standards and ensuring software
+                quality. Tools like linters and automated tests provide feedback upon which one can merge the changes to
+                the main branch. These integrated changes eventually get shipped to the end users (production).
+            </p>
+            <p>
+
+                The CD pipeline receives the tested and approved code. It confirms that all needed artifacts are being
+                deployed to the right place. Some examples: deploying a web application on a server, publishing a
+                library to a package manager repository, or publishing a mobile app to the app store.
+            </p>
+            <p>
+
+                Automating these processes ensures two important things: the process happens fast, and the process is a
+                lot less error-prone.
+            </p>
+            <p>
+
+
+                CI/CD Flow in this project
+            </p>
+            <p>
+
+                Push a change to a feature branch.
+            </p>
+            <p>
+
+                Create a Pull Request for this change.
+            </p>
+            <p>
+
+                The CI kicks in and runs the following: Lint, Test, Build
+            </p>
+            <p>
+
+                Once the CI finishes, it marks the PR as valid and a Code Review process begins
+            </p>
+            <p>
+
+                When the PR is approved, the code is merged into master
+            </p>
+            <p>
+
+                After the merge, the CD process kicks in: Lint, Test, Bump version, Deploy
+            </p>
+            <p>
+
+                After master branch is updated, the project will use dev.yml and prod.yml file to deploy the itself to
+                Heroku, and prod.yml with use added secrets to deploy the project to Dockerhub.
             </p>
         </div>
     </div>

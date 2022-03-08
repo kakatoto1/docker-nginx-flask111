@@ -20,60 +20,191 @@
         <header class="mb-5">
             <!-- As a link -->
             <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="#">Navbar</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav">
-                    <li class="nav-item">
-                      <a class="nav-link active" aria-current="page" href="/">Home</a>
+                <div class="container-fluid">
+                    <a class="navbar-brand" href="#">Navbar</a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarNav">
+                        <ul class="navbar-nav">
+                            <li class="nav-item">
+                                <a class="nav-link active" aria-current="page" href="/">Home</a>
 
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/github">Github</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/docker">Docker</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/pythonflask">PythonFlask</a>
-                    </li>
-                     <li class="nav-item">
-                        <a class="nav-link" href="/cicd">CICD</a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </nav>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="/github">Github</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="/docker">Docker</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="/pythonflask">PythonFlask</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="/cicd">CICD</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="clearfix">
+                    <img src="https://miro.medium.com/max/1280/1*XzIRJGujfqAiOV2EIQgR_Q.png"  height="60"
+                         class="col-md-20 float-md-end mb-3 ms-md-3" alt="...">
+                </div>
+            </nav>
         </header>
     </div>
     <div class="row">
-        <div class="col-12">
+        <div class="col-10">
             <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras eleifend leo eu porttitor commodo. Integer
-                dictum suscipit imperdiet. Ut eleifend aliquet ultricies. Duis enim neque, laoreet interdum sapien
-                suscipit,
-                vestibulum euismod massa. In in iaculis sem. Integer mattis fermentum dolor ac scelerisque. In diam
-                ligula,
-                feugiat et porta sit amet, congue eu lectus. Duis faucibus ultrices neque quis pharetra. Fusce convallis
-                ligula nec elementum dictum. Etiam velit justo, consequat eu felis a, porttitor volutpat urna. Curabitur
-                ac
-                sodales odio.
+                Pytest expects our tests to be in files whose names begin with test_ or end with _test.py.
             </p>
             <p>
-                In et nunc ullamcorper, viverra turpis luctus, dictum diam. Maecenas ornare sem aliquam magna dictum
-                tempus.
-                Pellentesque congue id tellus nec ultrices. Sed luctus arcu eget nulla auctor, et eleifend tellus
-                placerat.
-                Aliquam lectus dui, feugiat sit amet tempor vitae, fringilla sed metus. Morbi laoreet egestas dolor,
-                tempus
-                hendrerit leo ullamcorper vitae. Aliquam hendrerit turpis elit, ut posuere ligula pulvinar varius. In
-                hac
-                habitasse platea dictumst. Morbi porta varius ligula. Aliquam vel odio ut ante sagittis aliquet a id
-                urna.
+
+                We need to create a file called page_test_#.py, and inside it we will write a function which should take
+                a simple page as its argument and should return a status code.
+            </p>
+            <p>
+
+                We also need to write a test, test a page to ensure that the function does what it says.
+            </p>
+            <p>
+
+                def test_request_#(client):
+            </p>
+            <p>
+
+                """This makes the index page"""
+            </p>
+            <p>
+
+                response = client.get("/#")
+            </p>
+            <p>
+
+                assert response.status_code == 200
+            </p>
+            <p>
+
+                assert b"#" in response.data
+            </p>
+            <p>
+
+                We should see that our test passes.
+            </p>
+            <p>
+
+
+                Project outline
+            </p>
+            <p>
+
+                Project Root Folder <- Root of the project
+            </p>
+            <p>
+
+                docker-compose.yml <- Orchestration file that contains the configuration to develop locally, it
+                overrides the Dockerfile to run the flask development server instead of running the gunicorn server that
+                is used for hosting on Heroku
+            </p>
+            <p>
+
+                Dockerfile <-File used to create an image to run in a container that runs the program
+            </p>
+            <p>
+
+                Heroku.yml <- The heroku.yml file is a manifest you can use to define your Heroku app.
+            </p>
+            <p>
+
+                Pytest.ini <- File used to hold pytest configuration.
+            </p>
+            <p>
+
+                Readme.md <- generate the html summary to see at the bottom of projects.
+            </p>
+            <p>
+
+                Setup.py <- The setup script is the central of all activity in building, distributing, and installing
+                modules
+                using the Distutils.
+            </p>
+            <p>
+
+                Workflows Foldee <- .github Folder
+            </p>
+            <p>
+
+                Dev.yml <- The configuration file for development workflow.
+            </p>
+            <p>
+
+                Prod.yml <- The configuration file for production workflow.
+            </p>
+            <p>
+
+                Controllers Folder <- App Folder
+            </p>
+            <p>
+
+                Controller.py <- The Python controller runs a Python script when a sensor triggers the controller.
+            </p>
+            <p>
+
+                *_controller.py <- The controller file runs a Python script when a sensor triggers the * controller.
+            </p>
+            <p>
+
+                Templates Folder <- Simple pages folder <- App Folder
+            </p>
+            <p>
+
+                *.html <- * .html file is a HyperText Markup Language file format used as the basis of web page “*”.
+            </p>
+            <p>
+
+                _init_.py <- Definition of show(page) and set up 404 returning code. Any other module can add some
+                additional attributes to it.
+            </p>
+            <p>
+
+                Css Folder <- Static Folder <- App Folder
+            </p>
+            <p>
+
+                Style.css <- A classless stylesheet for HTML documents.
+            </p>
+            <p>
+
+                Images Folder <- Static Folder <- App Folder
+            </p>
+            <p>
+
+                *.jepg <- Stored images.
+            </p>
+            <p>
+
+                Js Folder <- Static Folder <- App Folder
+            </p>
+            <p>
+
+                Scripts.js <- JS (JavaScript) file contains JavaScript code for execution on web pages.
+            </p>
+            <p>
+
+                Templates Folder <- App Folder
+            </p>
+            <p>
+
+                _init_.py <- Definition of create_app, any other module can add some additional attributes to it.
+            </p>
+            <p>
+
+                Run.py <- Import create_app, any other module can add some additional attributes to it.
+            </p>
+            <p>
+
+                External Libraries Folder <- Contains pieces of pre-written code that is easy to implement.
             </p>
         </div>
     </div>
